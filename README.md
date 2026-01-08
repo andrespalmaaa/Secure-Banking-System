@@ -3,7 +3,7 @@
 A simple C++ banking system that demonstrates object-oriented programming, encapsulation, and secure transaction handling.
 The project simulates core banking operations such as account creation, deposits, withdrawals, and fund transfers while ensuring all data is accessed through controlled interfaces.
 
-Features
+## Features
 
 Encapsulated Bank Accounts
 
