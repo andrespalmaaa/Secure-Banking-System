@@ -1,13 +1,115 @@
 # The Secure Banking System
 
-In this project, you’ll build a basic banking system in C++ that uses encapsulation to manage account data. 
-You’ll create a BankAccount class to store account details and manage how the data is accessed and changed, ensuring proper behaviour and efficient handling of account operations. 
-Users interact with the account only through carefully designed methods, just as you interact with your bank account through an ATM or online banking platform.
+A simple C++ banking system that demonstrates object-oriented programming, encapsulation, and secure transaction handling.
+The project simulates core banking operations such as account creation, deposits, withdrawals, and fund transfers while ensuring all data is accessed through controlled interfaces.
 
-BankAccount class: This class will store data like account numbers and balances as private members. It will also include transaction methods such as deposits, withdrawals, and balance inquiries.
+Features
 
-Transaction class: This class will handle individual transactions, like deposits and withdrawals, within the BankAccount.
+Encapsulated Bank Accounts
 
-Bank class: This class will act as the overall manager of multiple BankAccount objects. It will be responsible for managing account creation, tracking balances, and securely handling transfers between accounts.
+Account numbers and balances stored as private members
 
-Objective: Build an encapsulated banking system in which each class and method plays a defined role. We aim to keep the data well-organized and only accessible through proper channels, ensuring efficiency and security while adhering to good design principles.
+Accessed only through getters, setters, and transaction methods
+
+Nested Transaction Class
+
+Handles deposits and withdrawals within BankAccount
+
+Ensures transaction logic remains tightly coupled to account behavior
+
+Prints clear transaction summaries and updated balances
+
+Bank Management System
+
+Manages multiple accounts using a dynamic vector
+
+Creates and stores new accounts
+
+Finds accounts by account number
+
+Transfers funds securely between accounts
+
+Secure Fund Transfers
+
+Transfers validated through account lookup and balance checks
+
+Returns status codes for transfer outcomes:
+
+1 – Transfer successful
+
+2 – Account not found
+
+3 – Insufficient funds
+
+Test & Demonstration
+
+Demonstrates deposits, withdrawals, and transfers
+
+Displays transaction logs and success/error messages
+
+Project Structure
+.
+├── BankAccount.hpp
+├── BankAccount.cpp
+├── Bank.hpp
+├── Bank.cpp
+└── main.cpp
+
+How It Works
+
+BankAccount
+
+Represents an individual bank account
+
+Stores account number and balance privately
+
+Uses a nested Transaction class to process deposits and withdrawals
+
+Transaction (Nested Class)
+
+Performs balance updates in a controlled manner
+
+Prevents invalid withdrawals
+
+Outputs transaction details
+
+Bank
+
+Manages a collection of BankAccount objects
+
+Creates accounts and locates them by account number
+
+Transfers funds using Transaction objects
+
+Example Output
+Deposited: 1000 | New Balance: 6000
+Withdrew: 500 | New Balance: 2500
+Withdrew: 1000 | New Balance: 5000
+Deposited: 1000 | New Balance: 3500
+Transfer successful.
+
+Concepts Demonstrated
+
+Encapsulation and data protection
+
+Nested classes
+
+Object interaction through references
+
+Status-code–based error handling
+
+Clean separation of responsibilities
+
+Objective
+
+To build a secure and well-structured banking system where:
+
+Sensitive data is never accessed directly
+
+All operations are performed through controlled methods
+
+Classes are modular, readable, and maintainable
+
+Author
+
+Built as part of a C++ learning project focused on object-oriented design and encapsulation principles.
