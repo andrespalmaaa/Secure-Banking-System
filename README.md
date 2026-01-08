@@ -1,115 +1,126 @@
 # The Secure Banking System
 
-A simple C++ banking system that demonstrates object-oriented programming, encapsulation, and secure transaction handling.
-The project simulates core banking operations such as account creation, deposits, withdrawals, and fund transfers while ensuring all data is accessed through controlled interfaces.
+# Overview
 
-# Features
+The Secure Banking System is a C++ project that demonstrates core object-oriented programming (OOP) principles, with a strong emphasis on encapsulation, data security, and modular design.
 
-Encapsulated Bank Accounts
+The system simulates basic banking operations such as creating accounts, depositing and withdrawing funds, and transferring money between accounts—while ensuring that all sensitive data is accessed and modified only through controlled interfaces.
 
-Account numbers and balances stored as private members
+# Key Concepts Demonstrated
 
-Accessed only through getters, setters, and transaction methods
+Encapsulation using private data members and public methods
 
-Nested Transaction Class
+Nested classes for logical grouping and tighter coupling of related functionality
 
-Handles deposits and withdrawals within BankAccount
+Safe data access through getters, setters, and transaction methods
 
-Ensures transaction logic remains tightly coupled to account behavior
+Separation of responsibilities across multiple classes
 
-Prints clear transaction summaries and updated balances
+Status-code–based error handling for banking operations
 
-Bank Management System
+#Features Implemented
+1. BankAccount Class
 
-Manages multiple accounts using a dynamic vector
+The BankAccount class represents an individual bank account and is responsible for securely storing and managing account data.
 
-Creates and stores new accounts
+Features:
 
-Finds accounts by account number
+Stores the account number and balance as private members
 
-Transfers funds securely between accounts
+Provides getter methods to safely access account details
 
-Secure Fund Transfers
+Provides setter methods to update account information in a controlled manner
 
-Transfers validated through account lookup and balance checks
+Prevents direct external modification of account balance
 
-Returns status codes for transfer outcomes:
+2. Nested Transaction Class
+
+The Transaction class is implemented as a nested class inside BankAccount, reinforcing encapsulation and logical organization.
+
+Features:
+
+Handles individual deposit and withdrawal operations
+
+Modifies account balances only through controlled transaction methods
+
+Validates sufficient funds before processing withdrawals
+
+Outputs clear transaction messages showing:
+
+Transaction type
+
+Amount involved
+
+Updated account balance
+
+This design ensures that transaction logic remains tightly coupled to the account it affects.
+
+3. Bank Class
+
+The Bank class acts as the system-wide manager for all bank accounts.
+
+Features:
+
+Stores multiple BankAccount objects using a dynamic vector
+
+Creates new accounts with unique account numbers and initial balances
+
+Locates accounts using a findAccount() search method
+
+Transfers funds securely between accounts using a transferMoney() method
+
+4. Secure Fund Transfers
+
+The transferMoney() method enables safe transfers between accounts and returns a status code indicating the outcome.
+
+Transfer Status Codes:
 
 1 – Transfer successful
 
-2 – Account not found
+2 – One or both accounts not found
 
-3 – Insufficient funds
+3 – Insufficient funds in the source account
 
-Test & Demonstration
+Transfers are processed using Transaction objects to ensure consistency with deposit and withdrawal operations.
 
-Demonstrates deposits, withdrawals, and transfers
+5. Testing & Demonstration
 
-Displays transaction logs and success/error messages
+The system includes a test scenario in main.cpp that demonstrates:
 
-Project Structure
-.
-├── BankAccount.hpp
-├── BankAccount.cpp
-├── Bank.hpp
-├── Bank.cpp
-└── main.cpp
+Creating a bank instance
 
-How It Works
+Creating multiple accounts with initial balances
 
-BankAccount
+Depositing and withdrawing funds using transactions
 
-Represents an individual bank account
+Transferring money between accounts
 
-Stores account number and balance privately
+Interpreting transfer results and printing appropriate success or error messages
 
-Uses a nested Transaction class to process deposits and withdrawals
+# Project Objective
 
-Transaction (Nested Class)
+The goal of this project is to build a secure, encapsulated banking system where:
 
-Performs balance updates in a controlled manner
-
-Prevents invalid withdrawals
-
-Outputs transaction details
-
-Bank
-
-Manages a collection of BankAccount objects
-
-Creates accounts and locates them by account number
-
-Transfers funds using Transaction objects
-
-Example Output
-Deposited: 1000 | New Balance: 6000
-Withdrew: 500 | New Balance: 2500
-Withdrew: 1000 | New Balance: 5000
-Deposited: 1000 | New Balance: 3500
-Transfer successful.
-
-Concepts Demonstrated
-
-Encapsulation and data protection
-
-Nested classes
-
-Object interaction through references
-
-Status-code–based error handling
-
-Clean separation of responsibilities
-
-Objective
-
-To build a secure and well-structured banking system where:
+Each class has a clearly defined responsibility
 
 Sensitive data is never accessed directly
 
-All operations are performed through controlled methods
+All operations are performed through safe, well-designed methods
 
-Classes are modular, readable, and maintainable
+The system remains modular, readable, and maintainable
 
-Author
+This project mirrors real-world banking interactions, where users interact with accounts only through secure interfaces such as ATMs or online banking platforms.
 
-Built as part of a C++ learning project focused on object-oriented design and encapsulation principles.
+# Summary
+
+The Secure Banking System showcases practical C++ OOP design by combining:
+
+Encapsulation
+
+Nested classes
+
+Safe transaction handling
+
+Multi-object coordination
+
+It provides a solid foundation for understanding how secure systems are structured and how responsibilities are distributed across interacting components.
